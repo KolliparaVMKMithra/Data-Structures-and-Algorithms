@@ -1,21 +1,21 @@
 //=========================================== Initializing and printing the array======================================
-// #include <stdio.h>
-// int main()
-// {
-//     int a[50], size;
-//     printf("Enter the size of the array:");
-//     scanf("%d", &size);
-//     printf("Enter the elements in the array:");
-//     for (int i = 0; i < size; i++)
-//     {
-//         scanf("%d", &a[i]);
-//     }
-//     printf("The elements in array are:");
-//     for (int i = 0; i < size; i++)
-//     {
-//         printf("%d", a[i]);
-//     }
-// }
+//  #include <stdio.h>
+//  int main()
+//  {
+//      int a[50], size,i;
+//      printf("Enter the size of the array:");
+//      scanf("%d", &size);
+//      printf("Enter the elements in the array:");
+//      for ( i = 0; i < size; i++)
+//      {
+//          scanf("%d", &a[i]);
+//      }
+//      printf("The elements in array are:");
+//      for (i = 0; i < size; i++)
+//      {
+//          printf("%d", a[i]);
+//      }
+//  }
 
 // ================================================Inserting elements into array =============================================
 // #include <stdio.h>
@@ -353,135 +353,249 @@
 //     return 0;
 // }
 // ====================================addition of two linked lists =================================
-#include <stdio.h>
-#include <stdlib.h>
+// #include <stdio.h>
+// #include <stdlib.h>
 
-struct node
-{
-    int data;
-    struct node *next;
-};
+// struct node
+// {
+//     int data;
+//     struct node *next;
+// };
 
-struct node *head1 = NULL;
-struct node *head2 = NULL;
-struct node *result = NULL;
-struct node *newnode, *temp;
+// struct node *head1 = NULL;
+// struct node *head2 = NULL;
+// struct node *result = NULL;
+// struct node *newnode, *temp;
 
-int number;
+// int number;
 
-void print(struct node *head)
-{
-    temp = head;
-    printf("The linked list is: [");
-    while (temp != 0)
-    {
-        printf("%d", temp->data);
-        temp = temp->next;
-    }
-    printf("]\n");
-}
+// void print(struct node *head)
+// {
+//     temp = head;
+//     printf("The linked list is: [");
+//     while (temp != 0)
+//     {
+//         printf("%d", temp->data);
+//         temp = temp->next;
+//     }
+//     printf("]\n");
+// }
 
-void createLinkedList(struct node **head)
-{
-    printf("Enter the number of nodes you want to create: ");
-    scanf("%d", &number);
-    for (int i = 0; i < number; i++)
-    {
-        newnode = (struct node *)malloc(sizeof(struct node));
-        printf("Enter the data of the node: ");
-        scanf("%d", &newnode->data);
-        newnode->next = NULL;
-        if (*head == NULL)
-        {
-            *head = temp = newnode;
-        }
-        else
-        {
-            temp->next = newnode;
-            temp = newnode;
-        }
-    }
-    print(*head);
-}
+// void createLinkedList(struct node **head)
+// {
+//     printf("Enter the number of nodes you want to create: ");
+//     scanf("%d", &number);
+//     for (int i = 0; i < number; i++)
+//     {
+//         newnode = (struct node *)malloc(sizeof(struct node));
+//         printf("Enter the data of the node: ");
+//         scanf("%d", &newnode->data);
+//         newnode->next = NULL;
+//         if (*head == NULL)
+//         {
+//             *head = temp = newnode;
+//         }
+//         else
+//         {
+//             temp->next = newnode;
+//             temp = newnode;
+//         }
+//     }
+//     print(*head);
+// }
 
-void addTwoLinkedLists(struct node *head1, struct node *head2)
-{
-    struct node *p1 = head1;
-    struct node *p2 = head2;
-    struct node *prev = NULL;
-    int carry = 0;
+// void addTwoLinkedLists(struct node *head1, struct node *head2)
+// {
+//     struct node *p1 = head1;
+//     struct node *p2 = head2;
+//     struct node *prev = NULL;
+//     int carry = 0;
 
-    while (p1 != NULL || p2 != NULL || carry != 0)
-    {
-        int sum = carry;
+//     while (p1 != NULL || p2 != NULL || carry != 0)
+//     {
+//         int sum = carry;
 
-        if (p1 != NULL)
-        {
-            sum += p1->data;
-            p1 = p1->next;
-        }
+//         if (p1 != NULL)
+//         {
+//             sum += p1->data;
+//             p1 = p1->next;
+//         }
 
-        if (p2 != NULL)
-        {
-            sum += p2->data;
-            p2 = p2->next;
-        }
+//         if (p2 != NULL)
+//         {
+//             sum += p2->data;
+//             p2 = p2->next;
+//         }
 
-        carry = sum / 10;
-        sum = sum % 10;
+//         carry = sum / 10;
+//         sum = sum % 10;
 
-        newnode = (struct node *)malloc(sizeof(struct node));
-        newnode->data = sum;
-        newnode->next = NULL;
+//         newnode = (struct node *)malloc(sizeof(struct node));
+//         newnode->data = sum;
+//         newnode->next = NULL;
 
-        if (result == NULL)
-        {
-            result = newnode;
-        }
-        else
-        {
-            prev->next = newnode;
-        }
-        prev = newnode;
-    }
+//         if (result == NULL)
+//         {
+//             result = newnode;
+//         }
+//         else
+//         {
+//             prev->next = newnode;
+//         }
+//         prev = newnode;
+//     }
 
-    print(result);
-}
+//     print(result);
+// }
 
-int main()
-{
-    int choice;
-    while (1)
-    {
-        printf("\n1. Create Linked List 1\n2. Create Linked List 2\n3. Add Linked Lists\n4. Print Linked List 1\n5. Print Linked List 2\n6. Print Result\n7. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
+// int main()
+// {
+//     int choice;
+//     while (1)
+//     {
+//         printf("\n1. Create Linked List 1\n2. Create Linked List 2\n3. Add Linked Lists\n4. Print Linked List 1\n5. Print Linked List 2\n6. Print Result\n7. Exit\n");
+//         printf("Enter your choice: ");
+//         scanf("%d", &choice);
 
-        switch (choice)
-        {
-        case 1:
-            createLinkedList(&head1);
-            break;
-        case 2:
-            createLinkedList(&head2);
-            break;
-        case 3:
-            addTwoLinkedLists(head1, head2);
-            break;
-        case 4:
-            print(head1);
-            break;
-        case 5:
-            print(head2);
-            break;
-        case 6:
-            print(result);
-            break;
-        case 7:
-            exit(0);
-        default:
-            printf("Invalid choice\n");
-        }
-    }
-    return 0;
-}
+//         switch (choice)
+//         {
+//         case 1:
+//             createLinkedList(&head1);
+//             break;
+//         case 2:
+//             createLinkedList(&head2);
+//             break;
+//         case 3:
+//             addTwoLinkedLists(head1, head2);
+//             break;
+//         case 4:
+//             print(head1);
+//             break;
+//         case 5:
+//             print(head2);
+//             break;
+//         case 6:
+//             print(result);
+//             break;
+//         case 7:
+//             exit(0);
+//         default:
+//             printf("Invalid choice\n");
+//         }
+//     }
+//     return 0;
+// }
+// =================================deletion of elements in linked lists =================================================
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// struct node
+// {
+//     int data;
+//     struct node *next;
+// };
+
+// struct node *head1 = NULL;
+// struct node *result = NULL;
+// struct node *newnode, *temp;
+
+// int number;
+
+// void print(struct node *head)
+// {
+//     temp = head;
+//     printf("The linked list is: [");
+//     while (temp != NULL)
+//     {
+//         printf("%d", temp->data);
+//         temp = temp->next;
+//         if (temp != NULL)
+//             printf(", ");
+//     }
+//     printf("]\n");
+// }
+
+// void createLinkedList(struct node **head)
+// {
+//     printf("Enter the number of nodes you want to create: ");
+//     scanf("%d", &number);
+//     for (int i = 0; i < number; i++)
+//     {
+//         newnode = (struct node *)malloc(sizeof(struct node));
+//         printf("Enter the data of the node: ");
+//         scanf("%d", &newnode->data);
+//         newnode->next = NULL;
+//         if (*head == NULL)
+//         {
+//             *head = temp = newnode;
+//         }
+//         else
+//         {
+//             temp->next = newnode;
+//             temp = newnode;
+//         }
+//     }
+//     print(*head);
+// }
+
+// void deletenode(struct node **head)
+// {
+//     struct node *temp = *head, *prev = NULL;
+//     int key;
+//     printf("Enter the value to delete: ");
+//     scanf("%d", &key);
+
+//     if (temp != NULL && temp->data == key)
+//     {7
+//         *head = temp->next;
+//         free(temp);
+//         printf("Node with value %d deleted successfully\n", key);
+//         return;
+//     }
+
+//     while (temp != NULL && temp->data != key)
+//     {
+//         prev = temp;
+//         temp = temp->next;
+//     }
+
+//     if (temp == NULL)
+//     {
+//         printf("Node with value %d not found\n", key);
+//         return;
+//     }
+
+//     prev->next = temp->next;
+//     free(temp);
+//     printf("Node with value %d deleted successfully\n", key);
+// }
+
+// int main()
+// {
+//     int choice;
+//     while (1)
+//     {n
+//         printf("\n1. Create Linked List 1 \n2. Delete Node from List 1\n3. Print Linked List 1\n4. Exit\n");
+//         printf("Enter your choice: ");
+//         scanf("%d", &choice);
+
+//         switch (choice)
+//         {
+//         case 1:
+//             createLinkedList(&head1);
+//             break;
+//         case 2:
+//             deletenode(&head1);
+//             break;
+//         case 3:
+//             print(head1);
+//             break;
+//         case 4:
+//             exit(0);
+//         default:
+//             printf("Invalid choice\n");
+//         }
+//     }
+//     return 0;
+// }
+// ================================================================================
